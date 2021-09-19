@@ -82,3 +82,15 @@ install(
   EXPORT implotTargets
   NAMESPACE implot::
   DESTINATION lib/cmake/implot/ )
+
+configure_file( implot.pc.in implot.pc @ONLY )
+install(
+  FILES "${CMAKE_CURRENT_BINARY_DIR}/implot.pc"
+  DESTINATION lib/pkgconfig/ )
+
+if( IMPLOT_BUILD_DEMO )
+  configure_file( implot-demo.pc.in implot-demo.pc @ONLY )
+  install(
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/implot-demo.pc"
+    DESTINATION lib/pkgconfig )
+endif()
