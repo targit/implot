@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 cmake_minimum_required( VERSION 3.20 )
 project( implot VERSION 0.11 LANGUAGES CXX )
 
+=======
+project( implot CXX )
+cmake_minimum_required( VERSION 3.20 )
+>>>>>>> e55a888e083514d35fc50f985216046218c6e396
 
 set( CMAKE_CXX_STANDARD_REQUIRED TRUE )
 set( CMAKE_CXX_STANDARD 17 )
@@ -14,7 +19,11 @@ set(
   RUNTIME DESTINATION  "bin/"
   INCLUDES DESTINATION "include/")
 
+<<<<<<< HEAD
 find_package( imgui REQUIRED VERSION 0.84.2 )
+=======
+find_package( imgui REQUIRED )
+>>>>>>> e55a888e083514d35fc50f985216046218c6e396
 
 add_library(
   implot
