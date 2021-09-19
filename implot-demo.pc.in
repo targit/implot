@@ -5,11 +5,7 @@ libdir=${prefix}/lib/
 
 Name: implot-demo
 Description: A demo widget for the implot library
-<<<<<<< HEAD
 Version: 0.11
-=======
-Version: 0.0.0
->>>>>>> e55a888e083514d35fc50f985216046218c6e396
 Cflags: -I${includedir}/
 Libs: -L${libdir}/${lib_prefix}/ -limplot-demo
 Requires.private: implot imgui-demo
