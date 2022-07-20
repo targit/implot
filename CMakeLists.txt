@@ -1,5 +1,6 @@
-cmake_minimum_required( VERSION 3.20 )
-project( implot VERSION 0.11 LANGUAGES CXX )
+cmake_minimum_required( VERSION 3.21 )
+cmake_policy( SET CMP0048 NEW )
+project( implot VERSION 0.13.2 LANGUAGES CXX )
 
 
 set( CMAKE_CXX_STANDARD_REQUIRED TRUE )
@@ -14,7 +15,7 @@ set(
   RUNTIME DESTINATION  "bin/"
   INCLUDES DESTINATION "include/")
 
-find_package( imgui REQUIRED VERSION 0.84.2 )
+find_package( imgui 1.88 REQUIRED )
 
 add_library(
   implot
