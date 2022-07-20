@@ -5,7 +5,7 @@ libdir=${prefix}/lib/
 
 Name: implot
 Description: A diagram plotting library ontop of imgui
-Version: 0.11
+Version: @CMAKE_PROJECT_VERSION@
 Cflags: -I${includedir}/
 Libs: -L${libdir}/${lib_prefix}/ -limplot
 Requires.private: imgui

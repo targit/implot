@@ -1,5 +1,6 @@
-cmake_minimum_required( VERSION 3.20 )
-project( implot VERSION 0.11 LANGUAGES CXX )
+cmake_minimum_required( VERSION 3.21 )
+cmake_policy( SET CMP0048 NEW )
+project( implot VERSION 0.13.2 LANGUAGES CXX )
 
 
 set( CMAKE_CXX_STANDARD_REQUIRED TRUE )
@@ -14,7 +15,7 @@ set(
   RUNTIME DESTINATION  "bin/"
   INCLUDES DESTINATION "include/")
 
-find_package( imgui REQUIRED VERSION 0.84.2 )
+find_package( imgui 1.88 REQUIRED )
 
 add_library(
   implot
@@ -73,10 +74,19 @@ if( IMPLOT_BUILD_DEMO )
 endif()
 
 include( CMakePackageConfigHelpers )
-configure_file( implotConfig.cmake.in implotConfig.cmake @ONLY )
+configure_package_config_file(
+  implotConfig.cmake.in
+  implotConfig.cmake
+  INSTALL_DESTINATION lib/cmake/implot/ )
+write_basic_package_version_file(
+  implotConfigVersion.cmake
+  VERSION ${CMAKE_PROJECT_VERSION}
+  COMPATIBILITY ExactVersion )
 
 install(
-  FILES "${CMAKE_CURRENT_BINARY_DIR}/implotConfig.cmake"
+  FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/implotConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/implotConfigVersion.cmake"
   DESTINATION lib/cmake/implot)
 
 install(
